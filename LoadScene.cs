@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
-    private int sceneID; // ID сцены
+    private int sceneID; // ID СЃС†РµРЅС‹
 
     /// <summary>
-    /// Выход из игры
+    /// Р’С‹С…РѕРґ РёР· РёРіСЂС‹
     /// </summary>
     public void Exit()
     {
@@ -16,7 +16,7 @@ public class LoadScene : MonoBehaviour
     }
 
     /// <summary>
-    /// Загрузка сцены
+    /// Р—Р°РіСЂСѓР·РєР° СЃС†РµРЅС‹
     /// </summary>
     /// <param name="numberScne"></param>
     public void LoadNumberScene(int numberScne)
@@ -26,7 +26,7 @@ public class LoadScene : MonoBehaviour
     }
 
     /// <summary>
-    /// Ассинхронная загрузка сцены
+    /// РђСЃСЃРёРЅС…СЂРѕРЅРЅР°СЏ Р·Р°РіСЂСѓР·РєР° СЃС†РµРЅС‹
     /// </summary>
     /// <returns></returns>
     IEnumerator AsyncLoad()
