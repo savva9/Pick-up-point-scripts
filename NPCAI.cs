@@ -7,20 +7,20 @@ public class NPCAI : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent; // AI
 
-    [SerializeField] private Transform target; // Цель
-    public int pickUpStage = 0; // Номер цели
+    [SerializeField] private Transform target; // Р¦РµР»СЊ
+    public int pickUpStage = 0; // РќРѕРјРµСЂ С†РµР»Рё
 
     [SerializeField] public GameObject helper; // helper
 
-    public int orderNumber; // Номер заказа
-    private string phrases; // Фраза
-    public bool isRefund; // Товар на возврат
-    [SerializeField] private GameObject textGameObject; // Объект текста
-    [SerializeField] public TextMeshProUGUI text; // Текст
-    private string textForVoice; // Текст для голоса
+    public int orderNumber; // РќРѕРјРµСЂ Р·Р°РєР°Р·Р°
+    private string phrases; // Р¤СЂР°Р·Р°
+    public bool isRefund; // РўРѕРІР°СЂ РЅР° РІРѕР·РІСЂР°С‚
+    [SerializeField] private GameObject textGameObject; // РћР±СЉРµРєС‚ С‚РµРєСЃС‚Р°
+    [SerializeField] public TextMeshProUGUI text; // РўРµРєСЃС‚
+    private string textForVoice; // РўРµРєСЃС‚ РґР»СЏ РіРѕР»РѕСЃР°
 
-    [SerializeField] public Transform player; // Игрок
-    public bool lookAtPlayer; // Надо ли смотреть на игрока
+    [SerializeField] public Transform player; // РРіСЂРѕРє
+    public bool lookAtPlayer; // РќР°РґРѕ Р»Рё СЃРјРѕС‚СЂРµС‚СЊ РЅР° РёРіСЂРѕРєР°
 
     public int id;
     public List<int> pickUpStages;
@@ -60,7 +60,7 @@ public class NPCAI : MonoBehaviour
     }
 
     /// <summary>
-    /// Поворачивание текста NPC к игроку
+    /// РџРѕРІРѕСЂР°С‡РёРІР°РЅРёРµ С‚РµРєСЃС‚Р° NPC Рє РёРіСЂРѕРєСѓ
     /// </summary>
     private void Update()
     {
@@ -72,7 +72,7 @@ public class NPCAI : MonoBehaviour
     }
 
     /// <summary>
-    /// Обновление пути
+    /// РћР±РЅРѕРІР»РµРЅРёРµ РїСѓС‚Рё
     /// </summary>
     public void pathUpdate()
     {
@@ -90,7 +90,7 @@ public class NPCAI : MonoBehaviour
     }
 
     /// <summary>
-    /// Выбор рандомной каробки
+    /// Р’С‹Р±РѕСЂ СЂР°РЅРґРѕРјРЅРѕР№ РєР°СЂРѕР±РєРё
     /// </summary>
     public void takeBox()
     {
@@ -102,29 +102,29 @@ public class NPCAI : MonoBehaviour
     }
 
     /// <summary>
-    /// Когда косается, любого тригера
+    /// РљРѕРіРґР° РєРѕСЃР°РµС‚СЃСЏ, Р»СЋР±РѕРіРѕ С‚СЂРёРіРµСЂР°
     /// </summary>
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
-        // Получить заказ
+        // РџРѕР»СѓС‡РёС‚СЊ Р·Р°РєР°Р·
         if (other.gameObject.tag == "PickUp" && pickUpStage == 1)
         {
             lookAtPlayer = true;
             helper.GetComponent<HumanSpawner>().currentHuman = this.gameObject;
             text.text = phrases;
             helper.GetComponent<TextToSpeech>().AddMessageToQueue(textForVoice);
-            helper.GetComponent<TVHelper>().SetTVText("Напечатайте на клавиатуре номер заказа");
+            helper.GetComponent<TVHelper>().SetTVText("РќР°РїРµС‡Р°С‚Р°Р№С‚Рµ РЅР° РєР»Р°РІРёР°С‚СѓСЂРµ РЅРѕРјРµСЂ Р·Р°РєР°Р·Р°");
         }
 
-        // Выход
+        // Р’С‹С…РѕРґ
         if(other.gameObject.tag == "HumanQuit" && pickUpStage == 5)
         {
             helper.GetComponent<HumanSpawner>().peopleList.Remove(this.gameObject);
             Destroy(this.gameObject);
         }
 
-        // Встать в очередь
+        // Р’СЃС‚Р°С‚СЊ РІ РѕС‡РµСЂРµРґСЊ
         if(other.gameObject.tag == "HumanDetecter" && pickUpStage == 0)
         {
             int linePosition = helper.GetComponent<HumanSpawner>().linePosition;
