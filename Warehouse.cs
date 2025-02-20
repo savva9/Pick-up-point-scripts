@@ -7,10 +7,10 @@ public class Warehouse : MonoBehaviour
 {
     [SerializeField] private GameObject helper; // helper
      
-    [SerializeField] private bool deleteOnExit; // Удалять из выхода заказа из склада
+    [SerializeField] private bool deleteOnExit; // РЈРґР°Р»СЏС‚СЊ РёР· РІС‹С…РѕРґР° Р·Р°РєР°Р·Р° РёР· СЃРєР»Р°РґР°
 
     /// <summary>
-    /// Вход заказа
+    /// Р’С…РѕРґ Р·Р°РєР°Р·Р°
     /// </summary>
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
@@ -24,7 +24,7 @@ public class Warehouse : MonoBehaviour
     }
 
     /// <summary>
-    /// Выход заказа
+    /// Р’С‹С…РѕРґ Р·Р°РєР°Р·Р°
     /// </summary>
     /// <param name="other"></param>
     private void OnTriggerExit(Collider other)
