@@ -6,7 +6,7 @@ public class HumanDetect : MonoBehaviour
 {
     [SerializeField] private GameObject helper; // helper
 
-    private HumanSpawner humanSpawner; // Скрипт спавна NPC
+    private HumanSpawner humanSpawner; // РЎРєСЂРёРїС‚ СЃРїР°РІРЅР° NPC
 
     private void Start()
     {
@@ -14,7 +14,7 @@ public class HumanDetect : MonoBehaviour
     }
 
     /// <summary>
-    /// Длина очереди вход
+    /// Р”Р»РёРЅР° РѕС‡РµСЂРµРґРё РІС…РѕРґ
     /// </summary>
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
@@ -26,7 +26,7 @@ public class HumanDetect : MonoBehaviour
     }
 
     /// <summary>
-    /// Длина очереди выход
+    /// Р”Р»РёРЅР° РѕС‡РµСЂРµРґРё РІС‹С…РѕРґ
     /// </summary>
     /// <param name="other"></param>
     private void OnTriggerExit(Collider other)
