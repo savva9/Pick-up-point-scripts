@@ -11,24 +11,24 @@ using Random = UnityEngine.Random;
 
 public class KeyBoard : MonoBehaviour
 {
-    public string text; // Текст
-    [SerializeField] public TextMeshProUGUI monitorText; // Текст монитора
+    public string text; // РўРµРєСЃС‚
+    [SerializeField] public TextMeshProUGUI monitorText; // РўРµРєСЃС‚ РјРѕРЅРёС‚РѕСЂР°
     [SerializeField] private GameObject helper; // helper
 
-    public bool getBox; // Получили ли мы коробку
+    public bool getBox; // РџРѕР»СѓС‡РёР»Рё Р»Рё РјС‹ РєРѕСЂРѕР±РєСѓ
 
-    [SerializeField] private ControllerVibration controllerVibration; // Контроллер
-    [SerializeField] private GameObject rightHand; // Правая рука
-    [SerializeField] private GameObject leftHand; // Левая рука
+    [SerializeField] private ControllerVibration controllerVibration; // РљРѕРЅС‚СЂРѕР»Р»РµСЂ
+    [SerializeField] private GameObject rightHand; // РџСЂР°РІР°СЏ СЂСѓРєР°
+    [SerializeField] private GameObject leftHand; // Р›РµРІР°СЏ СЂСѓРєР°
 
-    [SerializeField] private List<GameObject> buttons; // Кнопки клавиатуры
+    [SerializeField] private List<GameObject> buttons; // РљРЅРѕРїРєРё РєР»Р°РІРёР°С‚СѓСЂС‹
 
-    [SerializeField] private AudioSource ClicksAudioSource; // Звук клика
-    [SerializeField] private List<AudioClip> AudioClicks; // Звуки клика
+    [SerializeField] private AudioSource ClicksAudioSource; // Р—РІСѓРє РєР»РёРєР°
+    [SerializeField] private List<AudioClip> AudioClicks; // Р—РІСѓРєРё РєР»РёРєР°
 
-    [SerializeField] private AudioSource ComputerAudioSource; // Звук компьютера
-    [SerializeField] private AudioClip errorSound; // Звук ошибки
-    [SerializeField] private AudioClip completeSound; // Звук выполнения заказа
+    [SerializeField] private AudioSource ComputerAudioSource; // Р—РІСѓРє РєРѕРјРїСЊСЋС‚РµСЂР°
+    [SerializeField] private AudioClip errorSound; // Р—РІСѓРє РѕС€РёР±РєРё
+    [SerializeField] private AudioClip completeSound; // Р—РІСѓРє РІС‹РїРѕР»РЅРµРЅРёСЏ Р·Р°РєР°Р·Р°
 
     private TVHelper TVHelper;
 
@@ -39,7 +39,7 @@ public class KeyBoard : MonoBehaviour
     }
 
     /// <summary>
-    /// Воспроизведение звука компьютера
+    /// Р’РѕСЃРїСЂРѕРёР·РІРµРґРµРЅРёРµ Р·РІСѓРєР° РєРѕРјРїСЊСЋС‚РµСЂР°
     /// </summary>
     /// <param name="AudioClip"></param>
     private void PlaySound(AudioClip AudioClip)
@@ -52,7 +52,7 @@ public class KeyBoard : MonoBehaviour
     }
 
     /// <summary>
-    /// Когда коробка не приехала
+    /// РљРѕРіРґР° РєРѕСЂРѕР±РєР° РЅРµ РїСЂРёРµС…Р°Р»Р°
     /// </summary>
     private void BoxNotArrived()
     {
@@ -68,12 +68,12 @@ public class KeyBoard : MonoBehaviour
     }
 
     /// <summary>
-    /// Нажатие кнопки на клавиатуре
+    /// РќР°Р¶Р°С‚РёРµ РєРЅРѕРїРєРё РЅР° РєР»Р°РІРёР°С‚СѓСЂРµ
     /// </summary>
     /// <param name="key"></param>
     public void keyAdd(int key)
     {
-        // Вибрация
+        // Р’РёР±СЂР°С†РёСЏ
         Vector3 currentButton = helper.GetComponent<KeyBoard>().buttons[key + 2].GetComponentInChildren<TextMeshProUGUI>().transform.position;
         
         float distanceRight = Vector3.Distance(currentButton, rightHand.transform.position);
@@ -92,40 +92,40 @@ public class KeyBoard : MonoBehaviour
         {
             phrases = new Dictionary<string, string>()
             {
-                {"NowCompleteOrder", "Выдайте сначало заказ"},
-                {"IncorrectCode", "Неправильный код"},
-                {"OrderInWay", "Заказ в пути"},
-                {"RightOrder", "Заказ найден"},
+                {"NowCompleteOrder", "Р’С‹РґР°Р№С‚Рµ СЃРЅР°С‡Р°Р»Рѕ Р·Р°РєР°Р·"},
+                {"IncorrectCode", "РќРµРїСЂР°РІРёР»СЊРЅС‹Р№ РєРѕРґ"},
+                {"OrderInWay", "Р—Р°РєР°Р· РІ РїСѓС‚Рё"},
+                {"RightOrder", "Р—Р°РєР°Р· РЅР°Р№РґРµРЅ"},
             };
         } else
         {
             phrases = new Dictionary<string, string>()
             {
-                {"NowCompleteOrder", "Сначала сделайте возврат"},
-                {"IncorrectCode", "Неправильный код"},
-                {"OrderInWay", "Отказ в возврате"},
-                {"RightOrder", "Сделайте возврат заказа"},
+                {"NowCompleteOrder", "РЎРЅР°С‡Р°Р»Р° СЃРґРµР»Р°Р№С‚Рµ РІРѕР·РІСЂР°С‚"},
+                {"IncorrectCode", "РќРµРїСЂР°РІРёР»СЊРЅС‹Р№ РєРѕРґ"},
+                {"OrderInWay", "РћС‚РєР°Р· РІ РІРѕР·РІСЂР°С‚Рµ"},
+                {"RightOrder", "РЎРґРµР»Р°Р№С‚Рµ РІРѕР·РІСЂР°С‚ Р·Р°РєР°Р·Р°"},
             };
         }
 
-        // Звук нажатия калавиш
+        // Р—РІСѓРє РЅР°Р¶Р°С‚РёСЏ РєР°Р»Р°РІРёС€
         ClicksAudioSource.resource = AudioClicks[Random.Range(0, AudioClicks.Count)];
         ClicksAudioSource.Play();
 
-        // Нажатие
+        // РќР°Р¶Р°С‚РёРµ
         if (!getBox)
         {
             if (key == -2)
             {
                 GameObject currentHuman = helper.GetComponent<HumanSpawner>().currentHuman;
                 string orderNumber = currentHuman.GetComponent<NPCAI>().orderNumber.ToString();
-                // Проверка правильности кода
+                // РџСЂРѕРІРµСЂРєР° РїСЂР°РІРёР»СЊРЅРѕСЃС‚Рё РєРѕРґР°
                 if (orderNumber == text)
                 {
-                    // Проверка количества коробок
+                    // РџСЂРѕРІРµСЂРєР° РєРѕР»РёС‡РµСЃС‚РІР° РєРѕСЂРѕР±РѕРє
                     if (helper.GetComponent<BoxSpawner>().boxesInWarehouse.Count > 0 || isRefund)
                     {
-                        // Рандомная ситуация
+                        // Р Р°РЅРґРѕРјРЅР°СЏ СЃРёС‚СѓР°С†РёСЏ
                         int randomSitoation = Random.Range(1, 6);
                         if (randomSitoation == 5)
                         {
@@ -141,11 +141,11 @@ public class KeyBoard : MonoBehaviour
 
                             if (!isRefund) { 
                                 currentHuman.GetComponent<NPCAI>().takeBox();
-                                TVHelper.SetTVText("Принесите подсвеченную коробку");
+                                TVHelper.SetTVText("РџСЂРёРЅРµСЃРёС‚Рµ РїРѕРґСЃРІРµС‡РµРЅРЅСѓСЋ РєРѕСЂРѕР±РєСѓ");
                             }
                             else {
                                 StartCoroutine(helper.GetComponent<BoxSpawner>().refundBoxSpawner());
-                                TVHelper.SetTVText("Отнесите все коробки на возврат");
+                                TVHelper.SetTVText("РћС‚РЅРµСЃРёС‚Рµ РІСЃРµ РєРѕСЂРѕР±РєРё РЅР° РІРѕР·РІСЂР°С‚");
                             }
 
                             PlaySound(completeSound);
@@ -156,14 +156,14 @@ public class KeyBoard : MonoBehaviour
                         text = "";
                         monitorText.text = phrases["OrderInWay"];
                         BoxNotArrived();
-                        TVHelper.SetTVText("Вы не можите выдать заказ, из-за того что заказов нет на складе");
+                        TVHelper.SetTVText("Р’С‹ РЅРµ РјРѕР¶РёС‚Рµ РІС‹РґР°С‚СЊ Р·Р°РєР°Р·, РёР·-Р·Р° С‚РѕРіРѕ С‡С‚Рѕ Р·Р°РєР°Р·РѕРІ РЅРµС‚ РЅР° СЃРєР»Р°РґРµ");
                     }
                 }
                 else
                 {
                     text = "";
                     monitorText.text = phrases["IncorrectCode"];
-                    TVHelper.SetTVText("Вы ввели неправильный код");
+                    TVHelper.SetTVText("Р’С‹ РІРІРµР»Рё РЅРµРїСЂР°РІРёР»СЊРЅС‹Р№ РєРѕРґ");
 
                     PlaySound(errorSound);
                 }
