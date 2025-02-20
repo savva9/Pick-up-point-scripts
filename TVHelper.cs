@@ -5,7 +5,7 @@ using TMPro;
 
 public class TVHelper : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI TVText; // Текст телевизора
+    [SerializeField] private TextMeshProUGUI TVText; // РўРµРєСЃС‚ С‚РµР»РµРІРёР·РѕСЂР°
 
     public void SetTVText(string text)
     {
