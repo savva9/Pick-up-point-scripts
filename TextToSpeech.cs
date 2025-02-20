@@ -5,10 +5,10 @@ using SpeechLib;
 
 public class TextToSpeech : MonoBehaviour
 {
-    public bool canTalk; // Могут ли озвучивать речь в текст
-    private SpVoice voice; // Голос
-    private Queue<string> messageQueue; // Очередь
-    private bool isSpeaking; // Говорят ли сейчас
+    public bool canTalk; // РњРѕРіСѓС‚ Р»Рё РѕР·РІСѓС‡РёРІР°С‚СЊ СЂРµС‡СЊ РІ С‚РµРєСЃС‚
+    private SpVoice voice; // Р“РѕР»РѕСЃ
+    private Queue<string> messageQueue; // РћС‡РµСЂРµРґСЊ
+    private bool isSpeaking; // Р“РѕРІРѕСЂСЏС‚ Р»Рё СЃРµР№С‡Р°СЃ
 
     void Start()
     {
@@ -18,7 +18,7 @@ public class TextToSpeech : MonoBehaviour
     }
 
     /// <summary>
-    /// Добавление сообщений в очередь
+    /// Р”РѕР±Р°РІР»РµРЅРёРµ СЃРѕРѕР±С‰РµРЅРёР№ РІ РѕС‡РµСЂРµРґСЊ
     /// </summary>
     /// <param name="messages"></param>
     public void AddMessageToQueue(params string[] messages)
@@ -38,7 +38,7 @@ public class TextToSpeech : MonoBehaviour
     }
 
     /// <summary>
-    /// Последовательное воспроизведение
+    /// РџРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕРµ РІРѕСЃРїСЂРѕРёР·РІРµРґРµРЅРёРµ
     /// </summary>
     /// <returns></returns>
     IEnumerator PlayMessages()
