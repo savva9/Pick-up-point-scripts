@@ -5,16 +5,16 @@ using Valve.VR;
 
 public class ControllerVibration : MonoBehaviour
 {
-    [SerializeField] private SteamVR_Action_Vibration hapticAction; // Действие вибрации
+    [SerializeField] private SteamVR_Action_Vibration hapticAction; // Р”РµР№СЃС‚РІРёРµ РІРёР±СЂР°С†РёРё
     
-    [SerializeField] private float duration = 0.02f; // Длительность вибрации в секундах
-    [SerializeField] private float frequency = 50.0f; // Частота вибрации
-    [SerializeField] private float amplitude = 2.0f; // Амплитуда вибрации
+    [SerializeField] private float duration = 0.02f; // Р”Р»РёС‚РµР»СЊРЅРѕСЃС‚СЊ РІРёР±СЂР°С†РёРё РІ СЃРµРєСѓРЅРґР°С…
+    [SerializeField] private float frequency = 50.0f; // Р§Р°СЃС‚РѕС‚Р° РІРёР±СЂР°С†РёРё
+    [SerializeField] private float amplitude = 2.0f; // РђРјРїР»РёС‚СѓРґР° РІРёР±СЂР°С†РёРё
 
     private Coroutine vibrationCoroutine;
 
     /// <summary>
-    /// Начало вибрации
+    /// РќР°С‡Р°Р»Рѕ РІРёР±СЂР°С†РёРё
     /// </summary>
     /// <param name="hand"></param>
     public void TriggerVibration(SteamVR_Input_Sources hand)
@@ -27,7 +27,7 @@ public class ControllerVibration : MonoBehaviour
     }
 
     /// <summary>
-    /// Вибрация
+    /// Р’РёР±СЂР°С†РёСЏ
     /// </summary>
     /// <param name="hand"></param>
     /// <param name="duration"></param>
