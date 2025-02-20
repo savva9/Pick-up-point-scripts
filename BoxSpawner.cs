@@ -6,29 +6,29 @@ using UnityEngine;
 
 public class BoxSpawner : MonoBehaviour
 {
-    public float minSeconds; // Минимальное количество секунд до спавна коробки
-    public float maxSeconds; // Максимальное количество секунд до спавна коробки
-    public float delayBoxSpawn; // Время спавна коробок с задержкой
+    public float minSeconds; // РњРёРЅРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРµРєСѓРЅРґ РґРѕ СЃРїР°РІРЅР° РєРѕСЂРѕР±РєРё
+    public float maxSeconds; // РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРµРєСѓРЅРґ РґРѕ СЃРїР°РІРЅР° РєРѕСЂРѕР±РєРё
+    public float delayBoxSpawn; // Р’СЂРµРјСЏ СЃРїР°РІРЅР° РєРѕСЂРѕР±РѕРє СЃ Р·Р°РґРµСЂР¶РєРѕР№
 
-    public int maxBoxes; // Максимальное количество коробок
-    public int maxSpawnBoxes; // Максимальное количество коробо заспавненых за раз
+    public int maxBoxes; // РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РєРѕСЂРѕР±РѕРє
+    public int maxSpawnBoxes; // РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РєРѕСЂРѕР±Рѕ Р·Р°СЃРїР°РІРЅРµРЅС‹С… Р·Р° СЂР°Р·
     
-    public List<Transform> spawners; // Спавнера
-    [SerializeField] private Transform refundSpawer; // Спавнер возврата заказа
-    [SerializeField] private List<GameObject> boxesPrefabs; // Префабы коробок
+    public List<Transform> spawners; // РЎРїР°РІРЅРµСЂР°
+    [SerializeField] private Transform refundSpawer; // РЎРїР°РІРЅРµСЂ РІРѕР·РІСЂР°С‚Р° Р·Р°РєР°Р·Р°
+    [SerializeField] private List<GameObject> boxesPrefabs; // РџСЂРµС„Р°Р±С‹ РєРѕСЂРѕР±РѕРє
 
-    [SerializeField] public List<GameObject> boxesList; // Список коробок
-    [SerializeField] public List<GameObject> onRefund; // Коробки на возврат
-    [SerializeField] public List<GameObject> boxesInWarehouse; // Список коробок на складе
+    [SerializeField] public List<GameObject> boxesList; // РЎРїРёСЃРѕРє РєРѕСЂРѕР±РѕРє
+    [SerializeField] public List<GameObject> onRefund; // РљРѕСЂРѕР±РєРё РЅР° РІРѕР·РІСЂР°С‚
+    [SerializeField] public List<GameObject> boxesInWarehouse; // РЎРїРёСЃРѕРє РєРѕСЂРѕР±РѕРє РЅР° СЃРєР»Р°РґРµ
 
-    [SerializeField] public Transform boxContainer; // Контейнер коробок
+    [SerializeField] public Transform boxContainer; // РљРѕРЅС‚РµР№РЅРµСЂ РєРѕСЂРѕР±РѕРє
 
-    [SerializeField] public GameObject currentBox; // Нанешняя коробка на выдачь
+    [SerializeField] public GameObject currentBox; // РќР°РЅРµС€РЅСЏСЏ РєРѕСЂРѕР±РєР° РЅР° РІС‹РґР°С‡СЊ
 
-    [SerializeField] public Material outlineCurrentBox; // Подсветка коробки при выдачи
-    [SerializeField] public Material outlineRefundBox; // Подсветка коробки при возврате
+    [SerializeField] public Material outlineCurrentBox; // РџРѕРґСЃРІРµС‚РєР° РєРѕСЂРѕР±РєРё РїСЂРё РІС‹РґР°С‡Рё
+    [SerializeField] public Material outlineRefundBox; // РџРѕРґСЃРІРµС‚РєР° РєРѕСЂРѕР±РєРё РїСЂРё РІРѕР·РІСЂР°С‚Рµ
 
-    [SerializeField] public List<AudioClip> DropMusic; // Звуки падения коробки
+    [SerializeField] public List<AudioClip> DropMusic; // Р—РІСѓРєРё РїР°РґРµРЅРёСЏ РєРѕСЂРѕР±РєРё
 
     private void Start()
     {
@@ -37,7 +37,7 @@ public class BoxSpawner : MonoBehaviour
     }
 
     /// <summary>
-    /// Спавнер коробок
+    /// РЎРїР°РІРЅРµСЂ РєРѕСЂРѕР±РѕРє
     /// </summary>
     /// <param name="sec"></param>
     /// <returns></returns>
@@ -45,7 +45,7 @@ public class BoxSpawner : MonoBehaviour
     {
         if (boxesList.Count < maxBoxes)
         {
-            this.GetComponent<TVHelper>().SetTVText("Отнеси товары которые приехали на склад");
+            this.GetComponent<TVHelper>().SetTVText("РћС‚РЅРµСЃРё С‚РѕРІР°СЂС‹ РєРѕС‚РѕСЂС‹Рµ РїСЂРёРµС…Р°Р»Рё РЅР° СЃРєР»Р°Рґ");
             int boxToSpawn = Random.Range(1, maxSpawnBoxes);
             for (int i = 0; i < boxToSpawn; i++)
             {
@@ -62,14 +62,14 @@ public class BoxSpawner : MonoBehaviour
     }
 
     /// <summary>
-    /// Коробки на возврат
+    /// РљРѕСЂРѕР±РєРё РЅР° РІРѕР·РІСЂР°С‚
     /// </summary>
     /// <returns></returns>
     public IEnumerator refundBoxSpawner()
     {
         int boxToSpawn = Random.Range(1, maxSpawnBoxes);
 
-        this.GetComponent<TVHelper>().SetTVText("Отнесите товары на возврат");
+        this.GetComponent<TVHelper>().SetTVText("РћС‚РЅРµСЃРёС‚Рµ С‚РѕРІР°СЂС‹ РЅР° РІРѕР·РІСЂР°С‚");
         for (int i = 0; i < boxToSpawn; i++)
         {
             GameObject spawnedBox = Instantiate(boxesPrefabs[Random.Range(0, boxesPrefabs.Count)], refundSpawer.position, Quaternion.identity);
@@ -83,7 +83,7 @@ public class BoxSpawner : MonoBehaviour
     }
 
     /// <summary>
-    /// Обводка коробки
+    /// РћР±РІРѕРґРєР° РєРѕСЂРѕР±РєРё
     /// </summary>
     /// <param name="randomBox"></param>
     /// <param name="material"></param>
