@@ -7,7 +7,7 @@ public class BoxPickUpTrigger : MonoBehaviour
     [SerializeField] public GameObject helper; // helper
 
     /// <summary>
-    /// Выдача коробки 
+    /// Р’С‹РґР°С‡Р° РєРѕСЂРѕР±РєРё 
     /// </summary>
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
@@ -37,7 +37,7 @@ public class BoxPickUpTrigger : MonoBehaviour
 
             KeyBoard keyBoard = helper.GetComponent<KeyBoard>();
             keyBoard.getBox = false;
-            keyBoard.monitorText.text = "Заказ выдан";
+            keyBoard.monitorText.text = "Р—Р°РєР°Р· РІС‹РґР°РЅ";
         }
     }
 }
