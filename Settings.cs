@@ -18,11 +18,11 @@ public class Settings : MonoBehaviour
         if (textToSpeech.canTalk) 
         {
             textToSpeech.canTalk = false;
-            textCanTalk.text = "Вкл. Озвучку";
+            textCanTalk.text = "Р’РєР». РћР·РІСѓС‡РєСѓ";
         } else
         {
             textToSpeech.canTalk = true;
-            textCanTalk.text = "Выкл. Озвучку";
+            textCanTalk.text = "Р’С‹РєР». РћР·РІСѓС‡РєСѓ";
         }
     }
 }
