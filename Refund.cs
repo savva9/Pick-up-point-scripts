@@ -7,7 +7,7 @@ public class Refund : MonoBehaviour
     [SerializeField] private GameObject helper; // helper
 
     /// <summary>
-    /// Возврат заказа
+    /// Р’РѕР·РІСЂР°С‚ Р·Р°РєР°Р·Р°
     /// </summary>
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
@@ -32,7 +32,7 @@ public class Refund : MonoBehaviour
 
                 KeyBoard keyBoard = helper.GetComponent<KeyBoard>();
                 keyBoard.getBox = false;
-                keyBoard.monitorText.text = "Заказ возвращен";
+                keyBoard.monitorText.text = "Р—Р°РєР°Р· РІРѕР·РІСЂР°С‰РµРЅ";
             }
         }
     }
