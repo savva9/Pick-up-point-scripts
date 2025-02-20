@@ -8,9 +8,9 @@ using UnityEngine;
 public class BoxContainer : MonoBehaviour
 {
     [SerializeField] public GameObject helper; // helper
-    [SerializeField] public Transform Player; // Игрок
+    [SerializeField] public Transform Player; // РРіСЂРѕРє
 
-    [SerializeField] private AudioSource AudioSource; // Компонент звука
+    [SerializeField] private AudioSource AudioSource; // РљРѕРјРїРѕРЅРµРЅС‚ Р·РІСѓРєР°
 
     private bool isFalling;
 
@@ -20,7 +20,7 @@ public class BoxContainer : MonoBehaviour
     }
 
     /// <summary>
-    /// Проверка надо ли переместь коробку в контейнер
+    /// РџСЂРѕРІРµСЂРєР° РЅР°РґРѕ Р»Рё РїРµСЂРµРјРµСЃС‚СЊ РєРѕСЂРѕР±РєСѓ РІ РєРѕРЅС‚РµР№РЅРµСЂ
     /// </summary>
     private void Update()
     {
@@ -31,7 +31,7 @@ public class BoxContainer : MonoBehaviour
     }
 
     /// <summary>
-    /// Звук падения
+    /// Р—РІСѓРє РїР°РґРµРЅРёСЏ
     /// </summary>
     /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
