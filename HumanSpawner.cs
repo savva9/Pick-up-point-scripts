@@ -6,29 +6,29 @@ using UnityEngine;
 
 public class HumanSpawner : MonoBehaviour
 {
-    [SerializeField] public Transform player; // Игрок
+    [SerializeField] public Transform player; // РРіСЂРѕРє
 
-    public float minSeconds; // Минимальное количество секунд до спавна NPC
-    public float maxSeconds; // Максимальное количество секунд до спавна NPC
+    public float minSeconds; // РњРёРЅРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРµРєСѓРЅРґ РґРѕ СЃРїР°РІРЅР° NPC
+    public float maxSeconds; // РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРµРєСѓРЅРґ РґРѕ СЃРїР°РІРЅР° NPC
 
-    public int maxHumans; // Максимальное число NPC
-    [SerializeField] private List<Transform> spawners; // Спавнеры
-    [SerializeField] private List<GameObject> peoplePrefabs; // Префабы NPC
-    [SerializeField] public List<GameObject> peopleList; // Список людей
+    public int maxHumans; // РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ С‡РёСЃР»Рѕ NPC
+    [SerializeField] private List<Transform> spawners; // РЎРїР°РІРЅРµСЂС‹
+    [SerializeField] private List<GameObject> peoplePrefabs; // РџСЂРµС„Р°Р±С‹ NPC
+    [SerializeField] public List<GameObject> peopleList; // РЎРїРёСЃРѕРє Р»СЋРґРµР№
 
-    [SerializeField] public List<Transform> humanPoints; // Цели
-    [SerializeField] public List<Transform> quitPoints; // Точки выхода
+    [SerializeField] public List<Transform> humanPoints; // Р¦РµР»Рё
+    [SerializeField] public List<Transform> quitPoints; // РўРѕС‡РєРё РІС‹С…РѕРґР°
 
-    [SerializeField] private Transform humanContainer; // Контейнер людей
+    [SerializeField] private Transform humanContainer; // РљРѕРЅС‚РµР№РЅРµСЂ Р»СЋРґРµР№
 
-    [SerializeField] public GameObject currentHuman; // Текущий NPC на выдачи заказа
+    [SerializeField] public GameObject currentHuman; // РўРµРєСѓС‰РёР№ NPC РЅР° РІС‹РґР°С‡Рё Р·Р°РєР°Р·Р°
 
-    public List<string> phrases; // Приветственные фразы
-    public List<string> sadPhrases; // Грустные фразы
-    public List<string> positivePhrases; // Позитивные фразы
-    public List<string> refundPhrases; // Фраза возврата товара
+    public List<string> phrases; // РџСЂРёРІРµС‚СЃС‚РІРµРЅРЅС‹Рµ С„СЂР°Р·С‹
+    public List<string> sadPhrases; // Р“СЂСѓСЃС‚РЅС‹Рµ С„СЂР°Р·С‹
+    public List<string> positivePhrases; // РџРѕР·РёС‚РёРІРЅС‹Рµ С„СЂР°Р·С‹
+    public List<string> refundPhrases; // Р¤СЂР°Р·Р° РІРѕР·РІСЂР°С‚Р° С‚РѕРІР°СЂР°
 
-    public int linePosition = 0; // Длина очереди
+    public int linePosition = 0; // Р”Р»РёРЅР° РѕС‡РµСЂРµРґРё
 
     private void Start()
     {
@@ -36,7 +36,7 @@ public class HumanSpawner : MonoBehaviour
     }
 
     /// <summary>
-    /// Спавнер людей
+    /// РЎРїР°РІРЅРµСЂ Р»СЋРґРµР№
     /// </summary>
     /// <param name="sec"></param>
     /// <returns></returns>
@@ -55,7 +55,7 @@ public class HumanSpawner : MonoBehaviour
     }
 
     /// <summary>
-    /// Передвижение людей в очереди
+    /// РџРµСЂРµРґРІРёР¶РµРЅРёРµ Р»СЋРґРµР№ РІ РѕС‡РµСЂРµРґРё
     /// </summary>
     public void HumanMove()
     {
